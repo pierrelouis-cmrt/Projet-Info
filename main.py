@@ -9,7 +9,7 @@ def choisir_et_executer_script():
 
     print("\n\033[96m===== Scripts Disponibles =====\033[0m")
     for i, f in enumerate(fichiers, 1):
-        print(f"\033[93m{i}.\033[0m \033[92m{f}\033[0m")
+        print(f"\033[93m{i}.\033[0m \033[93m{f}\033[0m")
     print("\033[96m===============================\033[0m")
 
     try:

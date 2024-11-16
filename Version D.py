@@ -592,7 +592,7 @@ def code_central():
                 colored("Le joueur ", 'red') + colored(str(joueur), 'blue') +
                 " n'a plus de cartes.")
         elif joueur == 1:
-            print("Vos cartes sont :", colored(str(dico[joueur]), 'green'))
+            print("Vos cartes sont :", colored(str(dico[joueur]), 'orange'))
 
         print("\n")
         points_gagnes, dico = action(dico, joueur)
