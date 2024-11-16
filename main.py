@@ -1,5 +1,5 @@
 import os
-
+import sys
 
 def choisir_et_executer_script():
     fichiers = sorted(f for f in os.listdir()
@@ -19,7 +19,10 @@ def choisir_et_executer_script():
         if choix < 0 or choix >= len(fichiers):
             raise ValueError
         print(f"\n\033[95mExécution de {fichiers[choix]}...\033[0m\n")
-        os.system(f'python3 "{fichiers[choix]}"')
+
+        # Utilisez "python" ou "python3" selon la plateforme
+        commande_python = "python3" if sys.platform != "win32" else "python"
+        os.system(f'{commande_python} "{fichiers[choix]}"')
     except (ValueError, IndexError):
         print("\033[91m\nEntrée invalide. Veuillez réessayer.\033[0m")
 
