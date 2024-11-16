@@ -206,10 +206,16 @@ def action(dico, joueur):
                             'yellow'))
                 return 1, dico_final
         else:
+            # Ajouter les cartes révélées à la mémoire permanente
+            for idx, pos in enumerate(positions_revelees_tour):
+                cartes_revelees[pos] = cartes_revelees_tour[idx]
             print(colored("Le tour est terminé, c'est au suivant.", 'yellow'))
             return 0, dico  # On retourne le dico initial car les cartes sont remises en place
     else:
         print(colored("Le tour est terminé, c'est au suivant.", 'yellow'))
+        # Ajouter les cartes révélées à la mémoire permanente
+        for idx, pos in enumerate(positions_revelees_tour):
+            cartes_revelees[pos] = cartes_revelees_tour[idx]
         return 0, dico  # On retourne le dico initial car les cartes sont remises en place
 
 
@@ -608,7 +614,7 @@ def code_central():
             print(
                 colored('*-----*-----*-----*-----*-----*-----*-----*-----*',
                         'yellow'))
-
+            print(f"Voici les cartes mémorisés par les joueurs gérés par oridinateur : {cartes_revelees}")
         time.sleep(3)
 
     print("\n")
